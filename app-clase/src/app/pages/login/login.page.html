@@ -11,14 +11,22 @@
 
     <!-- Casilla de texto para usuario -->
     <ion-item class="fondo input ion-margin-top" lines="none">
-      <ion-input label="Usuario" labelPlacement="floating" placeholder="Enter text"></ion-input>
+      <ion-input label="Usuario" labelPlacement="floating" [(ngModel)]="mdl_usuario"></ion-input>
     </ion-item>
 
     <!-- Casilla de texto para Contraseña -->
     <ion-item class="fondo input ion-margin-top" lines="none">
-      <ion-input label="Contraseña" type="password" labelPlacement="floating" placeholder="Enter text"></ion-input>
+      <ion-input label="Contraseña" type="password" labelPlacement="floating" [(ngModel)]="mdl_contrasena"></ion-input>
     </ion-item>
   
   <ion-button (click)="navegar()" class="boton barra ion-margin-top" expand="block"> Ingresar </ion-button>
   </div>
+
+  <ion-alert
+  [isOpen]="isAlertOpen"
+  header="Información"
+  message="Credenciales invalidas"
+  [buttons]="alertButtons"
+  (didDismiss)="setOpen(false)">
+  </ion-alert>
 </ion-content>

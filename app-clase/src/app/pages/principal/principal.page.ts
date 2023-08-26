@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-principal',
@@ -6,10 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./principal.page.scss'],
 })
 export class PrincipalPage implements OnInit {
+  usuario: string = '';
+  contrasena: string = '';
 
-  constructor() { }
+  color: string = "light";
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    let parametros = this.router.getCurrentNavigation();
+
+    if(parametros?.extras.state){
+      this.usuario = parametros?.extras.state['user'];
+      this.contrasena = parametros?.extras.state['pass'];
+    }
+  }
+
+  fav(){
+    //Forma larga
+    //if(this.color == 'light'){
+      //this.color = 'danger';
+    //} else {
+      //this.color = 'light'
+    //}
+    //Forma rapida
+    this.color = this.color == 'light' ? 'danger' : 'light';
   }
 
 }
