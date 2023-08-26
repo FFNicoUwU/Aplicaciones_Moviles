@@ -13,7 +13,8 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-    navegar(){
-      this.router.navigate(['principal']);
-    }
+  navegar() {
+    this.router.navigate(['principal']);
+  }
+
 }

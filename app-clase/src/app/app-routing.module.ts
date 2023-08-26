@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-
   {
     path: '',
     redirectTo: 'login',
@@ -10,11 +9,11 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule)
   },
   {
     path: 'principal',
-    loadChildren: () => import('./pages/principal/principal.module').then( m => m.PrincipalPageModule)
+    loadChildren: () => import('./pages/principal/principal.module').then(m => m.PrincipalPageModule)
   },
 ];
 
