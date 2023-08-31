@@ -11,7 +11,7 @@ export class LoginPage implements OnInit {
   mdl_usuario: String = '';
   mdl_contrasena: String = '';
 
-  isAlertOpen = true;
+  isAlertOpen = false;
   alertButtons = ['OK'];
   
   constructor(private router: Router) { }
