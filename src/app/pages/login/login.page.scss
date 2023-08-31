@@ -1,0 +1,20 @@
+.barra{
+    --background: rgb(78,205,196);
+    --background: linear-gradient(90deg, rgba(78,205,196,1) 0%, rgba(247,255,247,1) 50%, rgba(255,225,168,1) 100%);
+    --color: #131212; 
+}
+.espacio{
+    width: 30px;
+}
+.fondo{
+    --background: rgb(63,94,251);
+    --background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+.fondo_boton{
+    --background:#0c33df;
+    color:#030303;
+}
+.fondo_text{
+    --background:#ffffff;
+    color:#030303;
+}
