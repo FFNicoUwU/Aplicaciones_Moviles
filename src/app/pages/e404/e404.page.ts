@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-e404',
@@ -11,5 +12,5 @@ export class E404Page implements OnInit {
 
   ngOnInit() {
   }
-
+ 
 }

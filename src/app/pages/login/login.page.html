@@ -1,12 +1,19 @@
 <ion-header [translucent]="true">
-  <ion-toolbar class="barra">
-    <ion-title >Duoc QR</ion-title>
+  <ion-toolbar class="barra" ><ion-img src="assets/logoduocuc.png"></ion-img> 
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true" class="fondo">
-  <ion-img src="assets/img_login.svg"></ion-img>
-  <ion-input  shape="round" label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresar Usuario"></ion-input>
-    <ion-input shape="round" label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresar contraseña"type="password"></ion-input>
-    <ion-button shape="round" fill="outline" class="fondo_boton">Ingresar</ion-button>
+  
+<ion-content [fullscreen]="true" class="fondo ion-text-center">
+  <div class="centrado">
+    <ion-img src="assets/img_login.svg"></ion-img>
+    <ion-input  shape="round" label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresar Usuario" [(ngModel)]="mdl_usuario"></ion-input>
+    <br>
+    <ion-input shape="round" label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresar contraseña"type="password" [(ngModel)]="mdl_contrasena"></ion-input>
+    <br>
+    <ion-button (click)="navegar()" shape="round" class="fondo_boton ion-margin-top">Ingresar</ion-button>
+    <br>
+
+  </div>
+  <a href="registro">Olvidé mi contraseña</a>
 </ion-content>
