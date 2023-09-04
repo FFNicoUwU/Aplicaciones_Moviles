@@ -1,13 +1,23 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>registro</ion-title>
+  <ion-toolbar class="barra">
+    <ion-img src="assets/logoduocuc.png"></ion-img>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">registro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="fondo ion-text-center">
+  <div class="centrado">
+    <ion-img src="assets/img_login.svg"></ion-img>
+    <!-- Usuario -->
+    <ion-input shape="round" label="Nombre de Usuario" label-placement="floating" fill="outline" placeholder="Ingresa un nombre de usuario" [(ngModel)]="usuario"></ion-input>
+    <br>
+    <!-- Contraseña -->
+    <ion-input shape="round" label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresa una contraseña" type="password" [(ngModel)]="contrasena"></ion-input>
+    <br>
+    <!-- Botón de registro -->
+    <ion-button (click)="registro()" shape="round" class="fondo_boton ion-margin-top">Registrarse</ion-button>
+  </div>
+  <a href="login">¿Ya tienes una cuenta? Inicia sesión</a>
+
+
+
 </ion-content>

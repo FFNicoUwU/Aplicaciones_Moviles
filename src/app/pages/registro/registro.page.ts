@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroPage implements OnInit {
 
-  constructor() { }
+  usuario: String ='';
+  contrasena: String = '';
+
+  isAlertOpen = false;
+  alertButtons = ['OK']
+  
+  constructor(private router: Router ) { }
 
   ngOnInit() {
   }
 
+
+  registro(){
+    if (this.usuario !== '' && this.contrasena !== ''){
+    let parametros: NavigationExtras = {
+      state: {
+        usuario: this.usuario,
+        pass: this.contrasena,
+      },
+    }; 
+    this.router.navigate(['login'],parametros);
+  }
+  }
 }

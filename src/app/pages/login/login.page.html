@@ -6,14 +6,27 @@
   
 <ion-content [fullscreen]="true" class="fondo ion-text-center">
   <div class="centrado">
+
+
     <ion-img src="assets/img_login.svg"></ion-img>
-    <ion-input  shape="round" label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresar Usuario" [(ngModel)]="mdl_usuario"></ion-input>
+    <!-- Usuario -->
+    <ion-input  shape="round" label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresar Usuario" [(ngModel)]="user"></ion-input>
     <br>
-    <ion-input shape="round" label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresar contraseña"type="password" [(ngModel)]="mdl_contrasena"></ion-input>
+    <!-- Contraseña -->
+    <ion-input shape="round" label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresar contraseña"type="password" [(ngModel)]="password"></ion-input>
     <br>
     <ion-button (click)="navegar()" shape="round" class="fondo_boton ion-margin-top">Ingresar</ion-button>
     <br>
 
   </div>
-  <a href="registro">Olvidé mi contraseña</a>
+  <a href="registro">¿No tienes cuenta? Registrate</a>
+
+  <!--Alerta de credenciales invalidas-->
+  <ion-alert
+  [isOpen]="isAlertOpen"
+  header="Información"
+  message="Credenciales invalidas"
+  [buttons]="alertButtons"
+  (didDismiss)="setOpen(false)">
+  </ion-alert>
 </ion-content>
