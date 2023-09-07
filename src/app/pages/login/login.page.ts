@@ -10,9 +10,11 @@ export class LoginPage implements OnInit {
 
   mdl_user: string = '';
   mdl_contrasena: string = '';
+
   user: string = '';
   password: string = '';
-
+  //Nombre de variable para la contraseña nueva
+  new_pass: string = '';
 
   isAlertOpen = false;
   alertButtons = ['OK']
@@ -24,6 +26,8 @@ export class LoginPage implements OnInit {
     if (parametros?.extras.state){
       this.mdl_user = parametros.extras.state['usuario'];
       this.mdl_contrasena = parametros.extras.state['pass'];
+      //Variable para contraseña nueva
+      this.new_pass = parametros.extras.state['newcontra'];
     }
   }
 
@@ -31,11 +35,13 @@ export class LoginPage implements OnInit {
     if (this.user.trim() === '' || this.password.trim() === ''){
       this.isAlertOpen = true;
       
-    }else if(this.user == this.mdl_user && this.password == this.mdl_contrasena){
+    }else if(this.user == this.mdl_user && (this.password == this.mdl_contrasena || this.password == this.new_pass)){
       let parametros:NavigationExtras = {
         state: {
           user: this.mdl_user,
-        }
+          pass: this.mdl_contrasena,
+          newcontra: this.new_pass
+        }, replaceUrl: true
       }
      this.router.navigate(['principal'],parametros);
     }else{
@@ -45,4 +51,21 @@ export class LoginPage implements OnInit {
     setOpen(isOpen: boolean) {
       this.isAlertOpen = isOpen;
     }
+  
+  registro(){
+    let parametros: NavigationExtras = {
+      replaceUrl: true
+    }
+    this.router.navigate(["registro"],parametros)
+  }
+  newcontra(){
+    let parametros: NavigationExtras = {
+      state: {
+        user: this.mdl_user,
+        pass: this.mdl_contrasena,
+        newcontra: this.new_pass
+      }, replaceUrl: true
+    }
+    this.router.navigate(["recuperacion"], parametros)
+  }
   }

@@ -18,6 +18,13 @@
   </div>
   <a href="login">¿Ya tienes una cuenta? Inicia sesión</a>
 
-
+  <!--Alerta de credenciales invalidas-->
+  <ion-alert
+  [isOpen]="isAlertOpen"
+  header="Información"
+  message="Campos vacios"
+  [buttons]="alertButtons"
+  (didDismiss)="setOpen(false)">
+  </ion-alert>
 
 </ion-content>

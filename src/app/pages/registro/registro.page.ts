@@ -10,10 +10,10 @@ export class RegistroPage implements OnInit {
 
   usuario: String ='';
   contrasena: String = '';
-
+  
   isAlertOpen = false;
   alertButtons = ['OK']
-  
+
   constructor(private router: Router ) { }
 
   ngOnInit() {
@@ -26,9 +26,15 @@ export class RegistroPage implements OnInit {
       state: {
         usuario: this.usuario,
         pass: this.contrasena,
-      },
+      }, replaceUrl: true
     }; 
     this.router.navigate(['login'],parametros);
+  }else {
+    this.isAlertOpen = true;
   }
   }
-}
+  setOpen(isOpen: boolean) {
+    this.isAlertOpen = isOpen;
+  }
+  }
+

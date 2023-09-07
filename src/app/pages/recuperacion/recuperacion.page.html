@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Recuperacion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="centrado">
+    <ion-img src="assets/img_login.svg"></ion-img>
+    <!-- Usuario -->
+    <ion-input  shape="round" label="Usuario" label-placement="floating" fill="outline" placeholder="Ingresar Usuario" [(ngModel)]="usuario"></ion-input>
+    <br>
+    <!-- Contraseña -->
+    <ion-input shape="round" label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresar contraseña"type="password" [(ngModel)]="password"></ion-input>
+    <br>
+    <ion-button (click)="confirmacion()" shape="round" class="fondo_boton ion-margin-top">Ingresar</ion-button>
+  </div>
+  
+  <!--Alerta de credenciales invalidas-->
+  <ion-alert
+  [isOpen]="isAlertOpen"
+  header="Información"
+  message="Credenciales invalidas"
+  [buttons]="alertButtons"
+  (didDismiss)="setOpen(false)">
+  </ion-alert>
+
+</ion-content>

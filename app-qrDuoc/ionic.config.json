@@ -1,7 +1,0 @@
-{
-  "name": "app-qrDuoc",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
