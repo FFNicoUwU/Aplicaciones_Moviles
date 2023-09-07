@@ -6,17 +6,25 @@
 
 <ion-content [fullscreen]="true" class="fondo ion-text-center">
   <div class="centrado">
-    <ion-img src="assets/img_login.svg"></ion-img>
+    <ion-img src="assets/111.svg"></ion-img>
+    <br>
+    <h1>Regístrate</h1>
     <!-- Usuario -->
-    <ion-input shape="round" label="Nombre de Usuario" label-placement="floating" fill="outline" placeholder="Ingresa un nombre de usuario" [(ngModel)]="usuario"></ion-input>
+    <ion-input shape="full" label="Nombre de Usuario" label-placement="floating" fill="outline" placeholder="Ingresa un nombre de usuario" [(ngModel)]="usuario"></ion-input>
+    <br>
+    <ion-input shape="full" label="Rut" label-placement="floating" fill="outline" placeholder="Ingresa tu rut"></ion-input>
     <br>
     <!-- Contraseña -->
-    <ion-input shape="round" label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresa una contraseña" type="password" [(ngModel)]="contrasena"></ion-input>
+    <ion-input shape="full" label="Contraseña" label-placement="floating" fill="outline" placeholder="Ingresa una contraseña" type="password" [(ngModel)]="contrasena"></ion-input>
     <br>
+    <ion-input shape="full" label="Email" label-placement="floating" fill="outline" placeholder="Ingresa tu email" type="email"></ion-input>
+    <br>
+
     <!-- Botón de registro -->
-    <ion-button (click)="registro()" shape="round" class="fondo_boton ion-margin-top">Registrarse</ion-button>
+    <ion-button (click)="registro()" shape="round" class="fondo_boton ion-margin-top" >Registrarse</ion-button>
   </div>
-  <a href="login">¿Ya tienes una cuenta? Inicia sesión</a>
+  <a (click)="login()">¿Ya tienes una cuenta? Inicia sesión</a>
+
 
   <!--Alerta de credenciales invalidas-->
   <ion-alert

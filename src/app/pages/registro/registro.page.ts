@@ -36,5 +36,12 @@ export class RegistroPage implements OnInit {
   setOpen(isOpen: boolean) {
     this.isAlertOpen = isOpen;
   }
+  login(){
+    let parametros: NavigationExtras = {
+      replaceUrl: true
+    }
+    this.router.navigate(["login"],parametros)
   }
+  }
+  
 

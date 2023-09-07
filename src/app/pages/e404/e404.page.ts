@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-e404',
@@ -8,9 +8,14 @@ import { Router } from '@angular/router';
 })
 export class E404Page implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit() {
   }
- 
+volver_login(){
+  let parametros:NavigationExtras ={
+      replaceUrl: true
+  }
+  this.router.navigate(["login"],parametros)
+ }
 }

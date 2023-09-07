@@ -32,4 +32,10 @@ export class PrincipalPage implements OnInit {
     } 
     this.router.navigate(['login'],parametros)
   }
+  login(){
+    let parametros: NavigationExtras ={
+      replaceUrl:true
+    }
+    this.router.navigate(['login'],parametros)
+  }
 }
