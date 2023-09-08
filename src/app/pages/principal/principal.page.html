@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar class="fondo1" ><ion-img src="assets/logoduocuc.png"></ion-img> 
   </ion-toolbar>
 </ion-header>
@@ -10,6 +10,6 @@
     </ion-toolbar>
     <ion-img src="assets/img_principal.svg"></ion-img>
     <ion-button shape="round" class="fondo_boton">Generar codigo QR (proximamente)</ion-button>
-    <ion-button (click)="retroceder()" shape="round"class="fondo_boton">Cerrar Sesion</ion-button>
+    <ion-button (click)="login()" shape="round"class="fondo_boton">Cerrar Sesion</ion-button>
   </ion-header>
 </ion-content>
